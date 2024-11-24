@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en", dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueTick</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+</head>
+<body class="bg-slate-100 overflow-x-hidden">
+
+    <!--Header-->
+    {% include "main_app/header.html" %}
+    <!--Header End-->
+
+    <article class="container mx-auto">
+        <section class="grid lg:grid-cols-2 
+        justify-center *:h-full gap-5 lg:py-32 py-5">
+            
+            <div class="flex flex-col justify-center gap-3">
+                <h1 class="text-4xl">{{ app.title }}</h1>
+                <p class="leading-10 text-lg">
+                    {{ app.description }}
+                </p>
+            </div>
+
+            <!--Card-->
+            <div class="card w-full lg:w-[400px] rounded-xl shadow-2xl 
+            bg-white p-4 flex flex-col mx-auto justify-center">
+                <a href="{% url "index" %}" class="bg-blue-500 p-4 flex justify-center items-center
+                rounded-full text-white w-[40px] h-[40px] ms-auto">
+                    <i class="bi bi-arrow-left-short text-2xl flex items-center"></i>
+                </a>
+                <div class="card-header flex justify-center py-4">
+                    <img class="rounded-2xl bg-blue-500" src="{{ app.image.url }}" alt="{{ app }}">
+                </div>
+                <div class="card-content">
+                    <div class="btns flex flex-col gap-3 text-white *:p-4 *:bg-blue-500 
+                    *:rounded-xl *:text-center *:flex *:gap-2
+                    *:justify-center [&_i]:text-2xl">
+                        <a href="{{ app.URL_website }}" class="hover:bg-blue-800
+                        transition duration-75 items-center
+                        active:scale-95">
+                            <i class="bi bi-browser-chrome flex items-center"></i>
+                            ورود به سایت
+                        </a>
+                        <a href="{{ app.URL_download }}" class="hover:bg-blue-800
+                        transition duration-75 items-center 
+                        active:scale-95">
+                            <i class="bi bi-android2 flex items-center"></i>
+                            دانلود اپلیکیشن
+                        </a>
+                    </div>
+                </div>
+                <!--Card End-->
+
+            </div>
+        </section>
+    </article>    
+
+    <script src="{% static 'main_app/js/alpineJsControllers/alpineJsController.js' %}"></script>
+    <script defer src="{% static 'main_app/js/alpine.js' %}"></script>
+    <script src="{% static 'main_app/js/app.js' %}"></script>
+</body>
+</html>

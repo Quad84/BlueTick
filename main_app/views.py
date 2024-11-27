@@ -14,7 +14,7 @@ def index_view(request):
     return render(request , 'main_app/index.html' , context={'app' : app , 'service' : service , 'ads' : ads })
 
 def App_details_view(request , slug):
-    App = get_object_or_404(Apps, slug=slug)
+    App = get_object_or_404(Apps, slug=slug , show=True)
     return render(request , "main_app/card_page.html" , context={'app' : App})
 
 

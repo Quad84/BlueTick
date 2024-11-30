@@ -26,9 +26,10 @@ SECRET_KEY = "django-insecure-1(4thea%7w^b=##qy@fe9(w1!&(g2-+d43vg(#*xx0ayv4n(wc
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
+# DEBUG = False
+# ALLOWED_HOSTS = ['blue-tick.ir' , 'www.blue-tick.ir']
 
 # Application definition
 
@@ -86,6 +87,20 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'bluetick_btteam_db',
+#         'HOST': '127.0.0.1',
+#         'USER': 'bluetick_amirrtn84',
+#         'PORT': '3306',
+#         'PASSWORD': 'B3+*ntdG9.0d',  # Your Password
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#         },
+#         }
+# }
+#
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

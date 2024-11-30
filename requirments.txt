@@ -4,3 +4,5 @@ django-cleanup==9.0.0
 pillow==11.0.0
 sqlparse==0.5.2
 tzdata==2024.2
+mysqlclient
+django-pwa

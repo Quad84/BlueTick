@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from os import path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'main_app.apps.MainAppConfig',
     'django_cleanup.apps.CleanupConfig',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,22 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# PWA
+PWA_APP_NAME = 'Blue Tick'
+PWA_APP_DESCRIPTION = "خدمات بلوتیک"
+PWA_APP_THEME_COLOR = '#0087FD'
+PWA_APP_BACKGROUND_COLOR = '#FFFFFF'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+    {
+        "src": STATIC_URL + "main_app/img/logo_new.png",
+        "sizes": "192x192"
+    },
+    {
+        "src": STATIC_URL + "main_app/img/logo_new.png",
+        "sizes": "512x512"
+    }
+]

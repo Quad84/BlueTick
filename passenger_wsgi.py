@@ -1,0 +1,1 @@
+from BlueTick.wsgi import application

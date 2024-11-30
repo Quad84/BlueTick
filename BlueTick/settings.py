@@ -138,8 +138,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [path.join(BASE_DIR, 'assets')]
+
 STATIC_ROOT = path.join(BASE_DIR, 'static_media/')
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
+
+# STATIC_ROOT = '/home1/bluetick/public_html/static'
+# MEDIA_ROOT = '/home1/bluetick/public_html/media'
+
 MEDIA_URL = 'media/'
 
 

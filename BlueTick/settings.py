@@ -171,3 +171,4 @@ PWA_APP_ICONS = [
         "sizes": "512x512"
     }
 ]
+PWA_APP_MANIFEST = STATIC_URL + 'main_app/js/manifest.json'

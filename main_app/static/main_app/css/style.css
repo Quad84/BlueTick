@@ -12,17 +12,33 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 110, 255);
+  background-color: rgb(0, 110, 255,.5);
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(0, 110, 255,1);
 }
 
 .container {
   width: 80% !important;
 }
+/* 
+nav {
+  border: .5px solid hsl(200.6,100%,51%);
+  box-shadow: 0 0 4px hsl(200.6,100%,51%);
+} */
+/* 
+.toolbox {
+  border: 1px solid hsl(200.6,100%,51%) !important;
+  box-shadow: 0 0 4px hsl(200.6,100%,51%);
+} */
 
-.tool-box div {
-  box-shadow: 2px 3px 10px 5px rgba(138, 138, 138, 0.264),inset 2px 3px 20px rgba(128, 128, 128, 0.275);
-}
+/* .box {
+  border: 1px solid hsl(200.6,100%,51%) !important;
+  box-shadow: 0 0 4px hsl(200.6,100%,51%);
+
+} */
 
 .swiper {
   width: 100%;
@@ -48,4 +64,18 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+}
+
+@keyframes iconOpacity {
+  0%{
+    opacity:.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tool-box a {
+  opacity: .1;
+  animation: iconOpacity 4s forwards ease;
 }

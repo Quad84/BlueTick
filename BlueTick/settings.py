@@ -25,11 +25,11 @@ SECRET_KEY = "django-insecure-1(4thea%7w^b=##qy@fe9(w1!&(g2-+d43vg(#*xx0ayv4n(wc
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = True
-# ALLOWED_HOSTS = []
+DEBUG = True
+ALLOWED_HOSTS = []
 
-DEBUG = False
-ALLOWED_HOSTS = ['blue-tick.ir' , 'www.blue-tick.ir']
+# DEBUG = False
+# ALLOWED_HOSTS = ['blue-tick.ir' , 'www.blue-tick.ir']
 
 # Application definition
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'main_app.apps.MainAppConfig',
     'django_cleanup.apps.CleanupConfig',
+    'sweetify',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = "BlueTick.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ['templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -75,30 +76,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "BlueTick.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bluetick_btteam_db',
-        'HOST': '127.0.0.1',
-        'USER': 'bluetick_amirrtn84',
-        'PORT': '3306',
-        'PASSWORD': 'B3+*ntdG9.0d',  # Your Password
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
-        }
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'bluetick_btteam_db',
+#         'HOST': '127.0.0.1',
+#         'USER': 'bluetick_amirrtn84',
+#         'PORT': '3306',
+#         'PASSWORD': 'B3+*ntdG9.0d',  # Your Password
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#         },
+#         }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -137,19 +137,18 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [path.join(BASE_DIR, 'assets')]
 
+STATIC_ROOT = path.join(BASE_DIR, 'static_media/')
+MEDIA_ROOT = path.join(BASE_DIR, 'media')
 
-# STATIC_ROOT = path.join(BASE_DIR, 'static_media/')
-# MEDIA_ROOT = path.join(BASE_DIR, 'media')
-
-STATIC_ROOT = '/home1/bluetick/public_html/static'
-MEDIA_ROOT = '/home1/bluetick/public_html/media'
-
+# STATIC_ROOT = '/home1/bluetick/public_html/static'
+# MEDIA_ROOT = '/home1/bluetick/public_html/media'
 
 MEDIA_URL = 'media/'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# possible options: 'sweetalert', 'sweetalert2' - default is 'sweetalert2'
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

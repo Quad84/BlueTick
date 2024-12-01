@@ -31,6 +31,9 @@ class ServiceAdmin(admin.ModelAdmin):
     list_filter = ('service',)
     readonly_fields = ('full_name', 'phone' , 'service', 'created' )
 
+    def has_add_permission(self, request):
+        return False
+
 @admin.register(BlueTick_info)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('phone', 'telegram')

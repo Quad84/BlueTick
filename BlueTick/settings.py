@@ -25,10 +25,10 @@ SECRET_KEY = "django-insecure-1(4thea%7w^b=##qy@fe9(w1!&(g2-+d43vg(#*xx0ayv4n(wc
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+# DEBUG = True
 # ALLOWED_HOSTS = []
 
-# DEBUG = False
+DEBUG = False
 ALLOWED_HOSTS = ['blue-tick.ir' , 'www.blue-tick.ir']
 
 # Application definition
